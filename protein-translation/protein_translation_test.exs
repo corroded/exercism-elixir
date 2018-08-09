@@ -3,12 +3,12 @@ if !System.get_env("EXERCISM_TEST_EXAMPLES") do
 end
 
 ExUnit.start()
-ExUnit.configure(exclude: :pending, trace: true)
+# ExUnit.configure(exclude: :pending, trace: true)
 
 defmodule ProteinTranslationTest do
   use ExUnit.Case
 
-  # @tag :pending
+  @tag :pending
   test "AUG translates to methionine" do
     assert ProteinTranslation.of_codon("AUG") == {:ok, "Methionine"}
   end
@@ -80,7 +80,7 @@ defmodule ProteinTranslationTest do
     assert ProteinTranslation.of_rna("CARROT") == {:error, "invalid RNA"}
   end
 
-  @tag :pending
+  # @tag :pending
   test "invalid codon at end of RNA" do
     assert ProteinTranslation.of_rna("UUUROT") == {:error, "invalid RNA"}
   end
