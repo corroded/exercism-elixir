@@ -1,5 +1,5 @@
 if !System.get_env("EXERCISM_TEST_EXAMPLES") do
-  Code.load_file("pig_latin.exs", __DIR__)
+  Code.load_file("pig_latin.ex", __DIR__)
 end
 
 ExUnit.start()
@@ -11,6 +11,7 @@ defmodule PigLatinTest do
   describe "ay is added to words that start with vowels" do
     # @tag :pending
     test "word beginning with a" do
+      PigLatin.translate("around") |> IO.inspect
       assert PigLatin.translate("apple") == "appleay"
     end
 
